@@ -1,0 +1,25 @@
+{
+  "name": "skeletron",
+  "version": "0.0.0",
+  "description": "Copy a dir template into a desired location using Hadlebars",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "some"
+  },
+  "keywords": [
+    "template",
+    "generate",
+    "directory",
+    "handlebars"
+  ],
+  "author": "@ferlores",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "~1.0.6-2",
+    "findit": "~0.1.2"
+  }
+}
