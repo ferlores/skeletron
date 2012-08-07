@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-module.exports = function (opts, cb) {
+module.exports = function (opts, callback) {
   var skel = opts.skel,
       destination = opts.dest,
       data = opts.data,
@@ -9,7 +9,10 @@ module.exports = function (opts, cb) {
 
   var hb = this.Handlebars = require('handlebars');
 
-  if (typeof cb === 'undefined') cb = function (err) { throw err;}
+  var cb = function (err) { 
+    if (typeof callback === 'undefined') throw err;
+    callback.apply(null, arguments); 
+  }
 
   fs.mkdir(destination, mode, function (err) {
     if (err) cb(err); 
@@ -40,6 +43,6 @@ module.exports = function (opts, cb) {
       fs.mkdirSync(dest, mode);
     });
 
-    if (typeof cb === 'function') cb(finder);
+    if (typeof callback === 'function') callback(finder);
   }); 
 }
