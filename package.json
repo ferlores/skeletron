@@ -3,12 +3,9 @@
   "version": "0.0.0",
   "description": "Copy a dir template into a desired location using Hadlebars",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
-    "url": "some"
+    "url": "https://github.com/ferlores/skeletron"
   },
   "keywords": [
     "template",
@@ -16,7 +13,7 @@
     "directory",
     "handlebars"
   ],
-  "author": "@ferlores",
+  "author": "Fernando Lores <ferlores@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "handlebars": "~1.0.6-2",
