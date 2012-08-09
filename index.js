@@ -21,13 +21,11 @@ module.exports = function (opts, callback) {
 
     var processFile = function (file, stat) {
       fs.readFile(file, function (err, content) {
-        if (err) cb(err);
-        var dest = file.replace(skel, destination);
-        var template = hb.compile(content.toString('utf8'));
+        var dest = file.replace(skel, destination),
+            templateName = hb.compile(dest),
+            templateContent = hb.compile(content.toString('utf8'));
 
-        fs.writeFile(dest, template(data), function (err) {
-          if (err) cb(err);
-        });
+        fs.writeFile(templateName(data), templateContent(data));
 
       });
     }
