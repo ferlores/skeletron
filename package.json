@@ -1,6 +1,6 @@
 {
   "name": "skeletron",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Copy a dir template into a desired location using Hadlebars",
   "main": "index.js",
   "repository": {
