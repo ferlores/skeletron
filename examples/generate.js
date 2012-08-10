@@ -26,7 +26,7 @@ var cb = function (finder) {
 }
 
 skeletron({
-  skel: __dirname + '/skel',
+  src: __dirname + '/skel',
   dest: __dirname + "/widget",
   data: data,
   mode: '0777'

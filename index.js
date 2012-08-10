@@ -1,10 +1,10 @@
 var fs = require('fs');
 
 module.exports = function (opts, callback) {
-  var skel = opts.skel,
+  var src = opts.src,
       destination = opts.dest,
       data = opts.data,
-      mode = opts.mode,
+      mode = opts.mode || '0755',
       followLinks = opts.followLinks || false;
 
   var hb = this.Handlebars = require('handlebars');
@@ -17,11 +17,11 @@ module.exports = function (opts, callback) {
   fs.mkdir(destination, mode, function (err) {
     if (err) cb(err); 
     
-    var finder = require('findit').find(skel);
+    var finder = require('findit').find(src);
 
     var processFile = function (file, stat) {
       fs.readFile(file, function (err, content) {
-        var dest = file.replace(skel, destination),
+        var dest = file.replace(src, destination),
             templateName = hb.compile(dest),
             templateContent = hb.compile(content.toString('utf8'));
 
@@ -37,7 +37,7 @@ module.exports = function (opts, callback) {
     }
 
     finder.on('directory', function (dir, stat) {
-      var dest = dir.replace(skel, destination);
+      var dest = dir.replace(src, destination);
       fs.mkdirSync(dest, mode);
     });
 
