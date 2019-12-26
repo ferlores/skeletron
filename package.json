@@ -16,7 +16,7 @@
   "author": "Fernando Lores <ferlores@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "handlebars": "~1.0.6-2",
+    "handlebars": "~4.5.3",
     "findit": "~0.1.2"
   }
 }
